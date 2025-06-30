@@ -6,16 +6,16 @@ import com.mbank.project.entity.Transaction;
 
 public class TransactionSpecifications {
 
-    public static Specification<Transaction> customerIdLike(String customerId) {
+    public static Specification<Transaction> customerIdEquals(String customerId) {
         return (root, query, cb) ->
                 customerId == null ? null :
-                        cb.like(root.get("customerId"), "%" + customerId + "%");
+                        cb.like(root.get("customerId"),  customerId);
     }
 
-    public static Specification<Transaction> accountNumberLike(String accountNumber) {
+    public static Specification<Transaction> accountNumberEquals(String accountNumber) {
         return (root, query, cb) ->
                 accountNumber == null ? null :
-                        cb.like(root.get("accountNumber"), "%" + accountNumber + "%");
+                        cb.like(root.get("accountNumber"), accountNumber);
     }
 
     public static Specification<Transaction> descriptionLike(String description) {

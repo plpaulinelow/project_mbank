@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class TransactionUpdateDTO {
     private Long id;
     private String description;
-    private Integer version;
 }

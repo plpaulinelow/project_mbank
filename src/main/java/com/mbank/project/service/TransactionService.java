@@ -27,8 +27,8 @@ public class TransactionService {
             Pageable pageable
     ) {
         Specification<Transaction> spec = Specification
-                .where(TransactionSpecifications.customerIdLike(customerId))
-                .and(TransactionSpecifications.accountNumberLike(accountNumber))
+                .where(TransactionSpecifications.customerIdEquals(customerId))
+                .and(TransactionSpecifications.accountNumberEquals(accountNumber))
                 .and(TransactionSpecifications.descriptionLike(description));
 
         return transactionRepository.findAll(spec, pageable)
@@ -44,7 +44,7 @@ public class TransactionService {
         entity.setDescription(dto.getDescription());
 
         try {
-            Transaction updated = transactionRepository.save(entity);
+            Transaction updated = transactionRepository.saveAndFlush(entity);
             return convertToDTO(updated);
         } catch (ObjectOptimisticLockingFailureException ex) {
             throw new RuntimeException("Concurrent update detected!");
