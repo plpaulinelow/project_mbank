@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+/*
+ * DTO for transaction entity
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -13,10 +13,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+/*
+ * Class to handle security configurations
+ */
 @EnableMethodSecurity
 @Configuration
 public class SecurityConfig {
+	
+	private final SecurityUserProperties securityUserProperties;
 
+	 public SecurityConfig(SecurityUserProperties securityUserProperties) {
+	        this.securityUserProperties = securityUserProperties;
+	    }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     	 http
@@ -30,9 +38,9 @@ public class SecurityConfig {
     
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user = User.withUsername("admin")
-                .password("password")
-                .roles("USER")
+        UserDetails user = User.withUsername(securityUserProperties.getUsername() )
+                .password(securityUserProperties.getPassword())
+                .roles(securityUserProperties.getRoles())
                 .build();
         return new InMemoryUserDetailsManager(user);
     }

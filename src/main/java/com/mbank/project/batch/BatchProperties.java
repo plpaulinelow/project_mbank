@@ -5,6 +5,9 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
+/*
+ * Class to hold batch properties
+ */
 @Component
 @ConfigurationProperties(prefix = "batch")
 @Data

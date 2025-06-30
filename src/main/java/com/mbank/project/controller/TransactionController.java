@@ -18,6 +18,9 @@ import com.mbank.project.service.TransactionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 
+/*
+ *  RESTful API calls
+ */
 @RestController
 @RequestMapping("/api/transactions")
 @RequiredArgsConstructor

@@ -2,6 +2,9 @@ package com.mbank.project.batch;
 
 import org.springframework.batch.item.file.separator.SimpleRecordSeparatorPolicy;
 
+/*
+ * Class to handle empty line when reading
+ */
 public class BlankLineRecordSeparatorPolicy extends SimpleRecordSeparatorPolicy {
 
     @Override

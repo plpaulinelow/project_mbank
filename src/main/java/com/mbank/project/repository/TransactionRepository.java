@@ -8,6 +8,9 @@ import java.time.LocalTime;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
+/*
+ * Transaction repository
+ */
 public interface TransactionRepository extends JpaRepository<Transaction, Long>, JpaSpecificationExecutor<Transaction> {
 	boolean existsByAccountNumberAndTrxAmountAndDescriptionAndTrxDateAndTrxTimeAndCustomerId(
             String accountNumber,

@@ -8,6 +8,9 @@ import com.mbank.project.repository.TransactionRepository;
 
 import lombok.RequiredArgsConstructor;
 
+/*
+ * Class to turn lines into transaction items
+ */
 @Component
 @RequiredArgsConstructor
 public class TransactionItemProcessor implements ItemProcessor<Transaction, Transaction> {

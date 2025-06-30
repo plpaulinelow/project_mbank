@@ -14,6 +14,9 @@ import com.mbank.project.entity.Transaction;
 import com.mbank.project.repository.TransactionRepository;
 import com.mbank.project.specification.TransactionSpecifications;
 
+/*
+ * Transaction Service to handle bussiness logic
+ */
 @Service
 @RequiredArgsConstructor
 public class TransactionService {

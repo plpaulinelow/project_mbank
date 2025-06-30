@@ -36,6 +36,9 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.PlatformTransactionManager;
 
+/*
+ * Class to handle batch configurations
+ */
 @Configuration
 @RequiredArgsConstructor
 public class BatchConfig {
